@@ -1,6 +1,6 @@
 # rope_sim
 
-A rope class for simulations.
+A rope simulation class I made from scratch, using Verlet integration (or Euler integration if you want to observe numerical instability.)
 
 ![springy](https://media.giphy.com/media/hbvvXZNo0W6ZkiKgTc/giphy.gif)
 ![head_moving](https://media.giphy.com/media/DJLv5HVLfMpvqkcDoX/giphy.gif)
