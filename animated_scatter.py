@@ -3,7 +3,6 @@ from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
 
 class AnimatedScatter(object):
-    """An animated scatter plot using matplotlib.animations.FuncAnimation."""
     def __init__(self, pts, save=False, filename="rope_vid.mp4"):
         self.pts = pts
         self.xs, self.ys = self.unzip()
