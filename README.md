@@ -7,7 +7,7 @@ A rope simulation class.
 ![constrained](https://media.giphy.com/media/wl56Ia4c77fSffSHWd/giphy.gif)
 ![both_moving](https://media.giphy.com/media/F9ZC74TZJJMYTQtj2y/giphy.gif)
 
-Vary dampening between points and drag. 
+Vary dampening and drag. 
 
 ![damped](https://media.giphy.com/media/C0dNc5XVss67AAO4Ka/giphy.gif)
 
