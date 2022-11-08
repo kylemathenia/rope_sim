@@ -182,7 +182,7 @@ class Rope:
     def __unit_vec(self, vec):
         mag = self.__mag(vec)
         if mag == 0: return np.array([0,0])
-        return vec / self.__mag(vec)
+        return vec / mag
 
     def __mag(self,vec):
         return np.linalg.norm(vec)
