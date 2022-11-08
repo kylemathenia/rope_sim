@@ -23,7 +23,7 @@ class PtMass:
         self.vel = self.new_vel
 
     def update_pos_derive_vel(self, pos, dt):
-        """Update position and derive the velocity from that. Useful for update the ends of the rope."""
+        """Update position and derive the velocity from that. Useful for updating the ends of the rope manually."""
         self.prev_pos = self.pos
         self.pos = pos
         self.new_vel = (pos - self.prev_pos) * dt
