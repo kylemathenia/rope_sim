@@ -1,5 +1,6 @@
 import rope
 import numpy as np
+from animated_scatter import AnimatedScatter
 
 k = 10
 c = 0

@@ -1,18 +1,29 @@
+
 import rope
-import numpy as np
+from animated_scatter import AnimatedScatter
 
-k = 1
-c = 0
-start_pos = np.array([-10, 10])
-end_pos = np.array([5, 10])
-num_pts = 5
-rope_density = 0.06  # kg
-unstretched_len = 10  # meters
-num_steps = 900
-step_size = 0.05
+rope = rope.Rope(k=1,c=0,start_pos=[-10,10],end_pos=[10,10],num_pts=6,\
+                 rope_density=0.06,unstretched_len=10,initialization='linear',\
+                 fixed_tail=False,gravity=-9.81,integration_method='verlet',drag_coef=.1)
 
-rope = rope.Rope(k,c,start_pos,end_pos,num_pts,rope_density,unstretched_len,initialization='linear',
-                 fixed_tail=True,gravity=-9.81,integration_method='euler')
+def demo1():
+    rope.sim(num_steps=1000,step_size=0.05)
+    a = AnimatedScatter(rope.sim_data, save=False, filename="rope_vid.mp4")
 
-rope.sim(num_steps,step_size)
-rope.animate(save=False)
+def demo2():
+    pass
+
+def demo3():
+    pass
+
+def demo4():
+    pass
+
+def main():
+    demo1()
+    demo2()
+    demo3()
+    demo4()
+
+if __name__ == "__main__":
+    main()
