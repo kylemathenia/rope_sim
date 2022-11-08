@@ -1,6 +1,6 @@
 # rope_sim
 
-A rope simulation class.
+A rope class for simulations.
 
 ![springy](https://media.giphy.com/media/hbvvXZNo0W6ZkiKgTc/giphy.gif)
 ![head_moving](https://media.giphy.com/media/DJLv5HVLfMpvqkcDoX/giphy.gif)
