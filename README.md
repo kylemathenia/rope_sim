@@ -2,7 +2,7 @@
 
 A rope simulation class.
 
-![springy](https://media.giphy.com/media/OTor8WBZBSkN2ZgmsX/giphy.gif)
+![springy](https://media.giphy.com/media/hbvvXZNo0W6ZkiKgTc/giphy.gif)
 ![head_moving](https://media.giphy.com/media/DJLv5HVLfMpvqkcDoX/giphy.gif)
 ![constrained](https://media.giphy.com/media/wl56Ia4c77fSffSHWd/giphy.gif)
 ![both_moving](https://media.giphy.com/media/F9ZC74TZJJMYTQtj2y/giphy.gif)
