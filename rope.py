@@ -87,21 +87,18 @@ class Rope:
         elif self.integration_method == 'euler': self.__step_euler(self.pts[-1], self.pts[-2], dt)
         else: raise KeyError
 
-    # def __find_acc(self,cur_pos,cur_vel,prev_pos,prev_vel,next_pos,next_vel,mass):
-    #     gravitational_force = mass * self.GRAVITY
-    #     force_prev_pt = self.__find_force_bet_points(cur_pos, cur_vel, prev_pos, prev_vel)
-    #     force_next_pt = self.__find_force_bet_points(cur_pos, cur_vel, next_pos, next_vel)
-    #     drag = self.__find_drag(cur_vel)
-    #     return (force_prev_pt + force_next_pt + gravitational_force - drag) / mass
-
-    # def __find_acc_end(self,cur_pos,cur_vel,other_pos,other_vel,mass):
-    #     gravitational_force = mass * self.GRAVITY
-    #     force = self.__find_force_bet_points(cur_pos, cur_vel, other_pos, other_vel)
-    #     drag = self.__find_drag(cur_vel)
-    #     return (force + gravitational_force - drag) / mass
-
     def __find_drag(self,vel):
-        return (0.5*(vel**2) * self.drag_coef)
+        speed = self.__mag(vel)
+        return (0.5*(speed**2) * self.drag_coef) * self.__unit_vec(vel)
+        # return (0.5*(vel) * self.drag_coef) #* self.__unit_vec(vel)
+
+    def __unit_vec(self, vec):
+        mag = self.__mag(vec)
+        if mag == 0: return np.array([0,0])
+        return vec / self.__mag(vec)
+
+    def __mag(self,vec):
+        return np.linalg.norm(vec)
 
     def __find_acc(self,cur_pt, prev_pt, next_pt=None):
         gravitational_force = cur_pt.mass * self.GRAVITY
@@ -120,7 +117,7 @@ class Rope:
         cur_pt.new_pos = (2*cur_pt.pos) - cur_pt.prev_pos + (dt**2) * acc
         cur_pt.new_vel = (cur_pt.new_pos-cur_pt.pos) * dt
 
-    def __step_euler(self, cur_pt, prev_pt, dt,next_pt=None):
+    def __step_euler(self, cur_pt, prev_pt, dt, next_pt=None):
         acc = self.__find_acc(cur_pt,prev_pt,next_pt)
         cur_pt.new_vel = cur_pt.vel + (acc * dt)
         cur_pt.new_pos = cur_pt.pos + (cur_pt.vel * dt)

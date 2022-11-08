@@ -2,9 +2,9 @@
 import rope
 from animated_scatter import AnimatedScatter
 
-rope = rope.Rope(k=1,c=0,start_pos=[-10,10],end_pos=[10,10],num_pts=6,\
+rope = rope.Rope(k=1,c=100,start_pos=[-10,10],end_pos=[10,10],num_pts=6,\
                  rope_density=0.06,unstretched_len=10,initialization='linear',\
-                 fixed_tail=False,gravity=-9.81,integration_method='verlet',drag_coef=.1)
+                 fixed_tail=False,gravity=-9.81,integration_method='verlet',drag_coef=1000)
 
 def demo1():
     rope.sim(num_steps=1000,step_size=0.05)
