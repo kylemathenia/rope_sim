@@ -138,12 +138,11 @@ class Rope:
         else: return -component_vel * self.c
 
     def __find_drag(self,vel):
-        speed = self.__mag(vel)
-        return (0.5 * (speed**2) * self.DRAG_COEF) * self.__unit_vec(vel)
+        return (0.5 * (self.__mag(vel)**2) * self.DRAG_COEF) * self.__unit_vec(vel)
 
     def __step_tail(self,dt):
-        if self.integration_method == 'verlet': self.__step_verlet(self._pts[-1], self._pts[-2], dt)
-        elif self.integration_method == 'euler': self.__step_euler(self._pts[-1], self._pts[-2], dt)
+        if self.integration_method == 'verlet': self.__step_verlet(self._last_pt, self._pts[-2], dt)
+        elif self.integration_method == 'euler': self.__step_euler(self._last_pt, self._pts[-2], dt)
         else: raise KeyError
 
     def __apply_steps(self):
@@ -151,8 +150,8 @@ class Rope:
             self._pts[i].step_pos()
             self._pts[i].step_vel()
         if not self.fixed_tail:
-            self._pts[-1].step_pos()
-            self._pts[-1].step_vel()
+            self._last_pt.step_pos()
+            self._last_pt.step_vel()
 
     def __append_data(self):
         cur_pos = []
