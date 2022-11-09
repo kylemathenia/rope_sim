@@ -1,6 +1,16 @@
 # rope_sim
 
-A rope simulation class I made from scratch, using Verlet integration (or Euler integration if you want to observe numerical instability.)
+A readable rope simulation class I made from scratch in python. Cheers.
+
+Parameters:
+- fixed or constrained tail
+- Verlet or Euler integration
+- spring constant
+- viscous damping constant
+- drag coefficient
+- number of points
+- unstretched length
+- gravity value
 
 ```
 # Springy
