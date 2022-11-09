@@ -38,6 +38,10 @@ for i in range(num_steps):
 ![head_moving](https://media.giphy.com/media/DJLv5HVLfMpvqkcDoX/giphy.gif)
 ![constrained](https://media.giphy.com/media/wl56Ia4c77fSffSHWd/giphy.gif)
 
-Optionally, use Euler integration and observe [numerical instability!](https://en.wikipedia.org/wiki/Euler_method#/media/File:Instability_of_Euler's_method.svg)
+```
+# Optionally, use Euler integration and observe [numerical instability!](https://en.wikipedia.org/wiki/Euler_method#/media/File:Instability_of_Euler's_method.svg)
+rope = Rope(k=2, c=0, start_pos=[0, 20], end_pos=[20, 10], num_pts=8, unstretched_len=15, fixed_tail=False, integration_method='euler', drag_coef=0.005)
+rope.sim(num_steps=300,step_size=0.05)
+```
 
 ![euler_instability](https://media.giphy.com/media/Wv3by7uBcN779ZBjJf/giphy.gif)
