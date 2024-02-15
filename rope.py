@@ -47,10 +47,6 @@ class Rope:
         self.initialization = initialization
         self.reset()
 
-
-    ###########################################################################
-    ################################# Public ##################################
-
     def step(self,dt):
         for i, cur_pt in enumerate(self._pts):
             if cur_pt == self._first_pt or cur_pt == self._last_pt: continue
@@ -85,10 +81,6 @@ class Rope:
         """You may want to dynamically change the unstretched length if the rope is going over a pulley, for example."""
         self._unstretched_len = length
         self._lo_per_seg = self.__find_lo_per_seg()
-
-
-    ###########################################################################
-    ################################# Private #################################
 
     ######## step funcs ########
 
