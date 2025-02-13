@@ -1,6 +1,6 @@
 # rope_sim
 
-A readable rope simulation class I made from scratch in python. Cheers.
+A simple rope simulation I made for funzies at some point.
 
 Parameters:
 - fixed or constrained tail
@@ -10,7 +10,7 @@ Parameters:
 - drag coefficient
 - number of points
 - unstretched length
-- gravity value
+- gravity
 
 ```
 # Springy
